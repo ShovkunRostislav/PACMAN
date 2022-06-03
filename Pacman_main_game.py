@@ -47,7 +47,7 @@ window = display.set_mode((win_width, win_height))
 display.set_caption('Pacman Game')
 clock = time.Clock()
 
-player = Hero('Pacman_HD.png', 10, 308, 15, 15, 2)
+player = Hero('Pacman_HD.png', 15, 308, 15, 15, 2)
 back = transform.scale(image.load('Pacman-Background.png'), (win_height, win_width))
 ghost = Enemy('ghost1.png', 350, 320, 15, 20, 2)
 
@@ -204,7 +204,9 @@ while game:
             print(side)
             player.rect.y -= 2
     if player.rect.x == 660 and 300 < player.rect.y < 330:
-            player.rect.x , player.rect.y = 10 , 308
+        player.rect.x , player.rect.y = 10 , 308
+    if player.rect.x == 13 and 300 < player.rect.y < 330:
+            player.rect.x , player.rect.y = 660 , 308
     if finish != True:
         window.fill((0,0,0))
         walls.draw(window)
